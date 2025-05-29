@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Brother!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="confetti-container"></div>
+  
+  <div class="container">
+    <div class="header">
+      <h1 class="title">🎉 Happy Birthday Arnav! 🎂</h1>
+      <div class="cake">
+        <div class="plate"></div>
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <div class="icing"></div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="message-box">
+      <p class="message">On your special day, I just want to say how proud I am to have a brother like you. Wishing you endless joy, love, and success. You deserve all the happiness in the world!</p>
+    </div>
+    
+    <div class="controls">
+      <button id="music-toggle" class="btn">
+        <i class="fas fa-music"></i> Play Music
+      </button>
+      <button id="confetti-btn" class="btn">
+        <i class="fas fa-birthday-cake"></i> Throw Confetti
+      </button>
+    </div>
+
+    <div class="gallery">
+      <h2><i class="fas fa-camera-retro"></i> Memories Together</h2>
+      <div class="photos">
+        <div class="photo-card">
+          <img src="images/brother1.jpg" alt="Brother 1" />
+          <div class="photo-caption">Best Brothers Forever</div>
+        </div>
+        <div class="photo-card">
+          <img src="images/brother2.jpg" alt="Brother 2" />
+          <div class="photo-caption">Adventure Buddies</div>
+        </div>
+        <div class="photo-card">
+          <img src="images/brother3.jpg" alt="Brother 3" />
+          <div class="photo-caption">Making Memories</div>
+        </div>
+        <!-- Add more images -->
+      </div>
+    </div>
+
+    <div class="wishes">
+      <h2><i class="fas fa-heart"></i> Birthday Wishes</h2>
+      <div class="wish-cards">
+        <div class="wish-card">
+          <div class="wish-content">May all your dreams come true!</div>
+        </div>
+        <div class="wish-card">
+          <div class="wish-content">Wishing you health and happiness!</div>
+        </div>
+        <div class="wish-card">
+          <div class="wish-content">Best year ahead!</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="heart-beat">
+        Made with <i class="fas fa-heart"></i> just for you, Brother.
+      </div>
+      <div class="copyright">© 2023 Your Loving Sibling</div>
+    </footer>
+  </div>
+
+  <audio id="birthday-audio" src="music/birthday.mp3" loop></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

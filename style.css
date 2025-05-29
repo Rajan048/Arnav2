@@ -1,0 +1,387 @@
+:root {
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --accent: #ffe66d;
+  --dark: #292f36;
+  --light: #f7fff7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('images/birthday-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--light);
+  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  animation: bounce 1s infinite alternate;
+}
+
+.message-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transform: perspective(500px) rotateX(0deg);
+  transition: transform 0.5s;
+}
+
+.message-box:hover {
+  transform: perspective(500px) rotateX(5deg);
+}
+
+.message {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: var(--primary);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn:hover {
+  background: #ff5252;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.gallery {
+  margin: 4rem 0;
+}
+
+.gallery h2, .wishes h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.photo-card {
+  width: 280px;
+  height: 320px;
+  perspective: 1000px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+
+.photo-card:hover img {
+  transform: rotateY(15deg) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.photo-caption {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.wishes {
+  margin: 4rem 0;
+}
+
+.wish-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.wish-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 300px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.wish-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.wish-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,230,109,0.1) 0%, transparent 70%);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+.wish-card:hover::before {
+  transform: rotate(45deg) translate(20%, 20%);
+}
+
+.wish-content {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heart-beat {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  animation: heartbeat 1.5s infinite;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Cake Animation */
+.cake {
+  width: 200px;
+  height: 120px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.plate {
+  width: 240px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: -20px;
+}
+
+.layer {
+  position: absolute;
+  width: 200px;
+  border-radius: 10px;
+  left: 0;
+}
+
+.layer-bottom {
+  height: 60px;
+  background: linear-gradient(to bottom, #f8c9d1, #e75480);
+  bottom: 0;
+}
+
+.layer-middle {
+  height: 40px;
+  background: linear-gradient(to bottom, #f5b5c4, #e75480);
+  bottom: 60px;
+  animation: slide-in 1s ease-out;
+}
+
+.layer-top {
+  height: 30px;
+  background: linear-gradient(to bottom, #f5b5c4, #e75480);
+  bottom: 100px;
+  animation: slide-in 1.2s ease-out;
+}
+
+.icing {
+  position: absolute;
+  width: 200px;
+  height: 10px;
+  background: #fff;
+  border-radius: 5px;
+  bottom: 130px;
+  left: 0;
+}
+
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(to right, #fd9a00, #ff5e00, #fd9a00);
+  bottom: 140px;
+  left: 95px;
+  animation: flicker 3s infinite;
+}
+
+.flame {
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  background: linear-gradient(to bottom, white, #ff7800, transparent);
+  border-radius: 50% 50% 20% 20%;
+  bottom: 30px;
+  left: -2.5px;
+  box-shadow: 0 0 20px #ff7800, 0 0 60px #ff7800;
+  animation: flicker 2s infinite alternate;
+}
+
+/* Animations */
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes flicker {
+  0%, 100% { transform: translateY(0) rotate(-2deg); opacity: 1; }
+  25% { transform: translateY(-2px) rotate(0deg); opacity: 0.9; }
+  50% { transform: translateY(0) rotate(2deg); opacity: 1; }
+  75% { transform: translateY(-3px) rotate(0deg); opacity: 0.8; }
+}
+
+/* Confetti container */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+  }
+  
+  .photo-card {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .photo-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .gallery h2, .wishes h2 {
+    font-size: 1.8rem;
+  }
+  
+  .photos {
+    gap: 1.5rem;
+  }
+  
+  .photo-card {
+    width: 150px;
+    height: 220px;
+  }
+  
+  .photo-card img {
+    height: 150px;
+  }
+  
+  .wish-card {
+    width: 100%;
+  }
+}
